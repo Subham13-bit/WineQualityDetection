@@ -44,17 +44,17 @@ model.compile(optimizer='adam',
 model.fit(X_train, y_train, epochs=50, batch_size=10, verbose=0)
 
 # Input fields
-fixed_acidity = st.number_input("Fixed Acidity", value=7.4)
-volatile_acidity = st.number_input("Volatile Acidity", value=0.7)
-citric_acid = st.number_input("Citric Acid", value=0.0)
-residual_sugar = st.number_input("Residual Sugar", value=1.9)
-chlorides = st.number_input("Chlorides", value=0.076)
-free_sulfur_dioxide = st.number_input("Free Sulfur Dioxide", value=11.0)
-total_sulfur_dioxide = st.number_input("Total Sulfur Dioxide", value=34.0)
-density = st.number_input("Density", value=0.9978)
-pH = st.number_input("pH", value=3.51)
-sulphates = st.number_input("Sulphates", value=0.56)
-alcohol = st.number_input("Alcohol", value=9.4)
+fixed_acidity = st.slider("Fixed Acidity", 0.0, 20.0, 7.4)
+volatile_acidity = st.slider("Volatile Acidity", 0.0, 2.0, 0.7)
+citric_acid = st.slider("Citric Acid", 0.0, 1.0, 0.0)
+residual_sugar = st.slider("Residual Sugar", 0.0, 20.0, 1.9)
+chlorides = st.slider("Chlorides", 0.000, 1.000, 0.076)
+free_sulfur_dioxide = st.slider("Free Sulfur Dioxide", 0.0, 100.0, 11.0)
+total_sulfur_dioxide = st.slider("Total Sulfur Dioxide", 0.0, 300.0, 34.0)
+density = st.slider("Density", 0.9000, 1.1000, 0.9978)
+pH = st.slider("pH", 2.0, 5.0, 3.51)
+sulphates = st.slider("Sulphates", 0.0, 2.0, 0.56)
+alcohol = st.slider("Alcohol", 5.0, 20.0, 9.4)
 
 if st.button("Predict"):
     user_data = np.array([[
